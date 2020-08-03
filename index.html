@@ -1,92 +1,322 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>HTML5工具台绘画板 - 源码之家</title>
-
-<link rel="stylesheet" href="css/index.css" />
-
-<script src="js/jquery-3.3.1.min.js"></script>
-
+<head>	
+	<title>Bencky Chan's Resume</title>
+	<meta charset="utf-8"/>
+	<meta name="aothor" content="Power by BK"/>
+	<meta name="keywords" content="Resume,个人简历,简历"/>
+	<meta name="description" content="Bencky Chan's Resume"/>
 </head>
 <body>
-
-<div class="h_box">
-	<canvas id="canvas" width="1200" height="600"></canvas>
-	<div class="h_console">
-		<div class="h_tool">工具台</div>
-		<ul class="h_tool1">
-			<li id="line" class="bg">
-				<span class="iconfont" title="绘制直线">&#xe653;</span>
-			</li>
-			<li id="rect" class="bg">
-				<span class="iconfont" title="绘制矩形">&#xe648;</span>
-			</li>
-			<li id="dytriangle" class="bg">
-				<span class="iconfont" title="绘制等腰三角形">&#xe601;</span>
-			</li>
-			<li id="zjtriangle" class="bg">
-				<span class="iconfont" title="绘制直角三角形">&#xe705;</span>
-			</li>
-			<li id="tablet" class="bg bgtb">
-				<span class="iconfont" title="铅笔">&#xe6be;</span>
-			</li>
-			<li id="polygon" class="bg bgp">
-				<span class="iconfont" title="绘制多边形">&#xe605;</span>
-				<div class="polygon1">
-					<input type="number" min="3" max="30" value="3" id="range">
-					<div class="trag"></div>
+	<div class="wrapper">
+		<div class="main">
+			<img class="bk" src="img/bk.png"/>
+			<div class="name"><!-- 基本信息 -->
+				<table>
+					<tr>
+						<td><h1>陈本奇</h1><p>Bencky Chan</p></td>
+						<td><img class="qrcode" src="img/qrcode.jpg"/></td>
+					</tr>
+				</table>
+				<span class="career" style="color:black">
+					<p>求职意向：前端工程师（实习生）</p>
+				</span>
+				<table class="table" border="0" >
+					<tr class="basic">
+						<td><img src="img/sr.png"/></td>
+						<td>生日：1998.10.17</td>
+						<td><img src="img/sj.png"/></td>
+						<td>手机：13402590968</td>
+					</tr>
+					<tr class="basic">
+						<td><img src="img/dw.png"/></td>
+						<td>现居：苏州市.吴中区</td>
+						<td><img src="img/yx.png"/></td>
+						<td>邮箱：<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=YwEGDQAIGlJTUlQjEhJNAAwO" alt="点击可发送邮件" title="点击可发送邮件">bencky1017@qq.com</a></td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:100px;">
+				<div class="education mdiv"><!-- 教育背景 -->
+					<div class="category">
+						<img src="img/jy-1.png" width="25px" height="25px" />
+						<span>&nbsp;教育背景</span>
+					</div>
+					<div class="description">
+						<table width="650px" style="font-size:20px;font-weight:700;color:#336fac">
+							<tr>
+								<td>2017.09-2021.06</td>
+								<td>苏州科技大学天平学院</td>
+								<td>通信工程</td>
+							</tr>
+						</table>
+						<span>
+							<h3>主修课程：</h3>
+							<table style="width:650px">
+								<tr>
+									<td>高等数学，</td>
+									<td>计算机基础，</td>
+									<td>电路分析，</td>
+									<td>单片机与接口技术，</td>
+								</tr>
+								<tr>
+									<td>通信原理，</td>
+									<td>数字电子技术，</td>
+									<td>模拟电子技术，</td>
+									<td>C语言程序设计基础，</td>
+								</tr>
+								<tr>
+									<td>信号与系统，</td>
+									<td>电子电路CAD，</td>
+									<td>MATLAB应用技术，</td>
+									<td>以及相关实践类课程。</td>
+								</tr>
+							</table>
+							<h3>自学内容：</h3>
+							<table style="width:600px;">
+								<tr>
+									<td>C语言程序设计，</td>
+									<td>HTML网页设计，</td>
+									<td>CSS样式，</td>
+								</tr>
+								<tr>
+									<td>JavaScript脚本设计，</td>
+									<td>jQuery框架等。</td>
+									<td></td>
+								</tr>
+							</table>
+						</span>
+					</div>
 				</div>
-			</li>
-			<li class="bg" id="circle">
-				<span class="iconfont" title="绘制圆形">&#xe75d;</span>
-			</li>
-			<li class="bg" id="ellipse">
-				<span class="iconfont" title="绘制椭圆">&#xe800;</span>
-			</li>
-			<li class="bg" id="eraser">
-				<span class="iconfont" title="橡皮擦">&#xe6b8;</span>
-			</li>
-		</ul>
-		<ul class="h_tool1 h_tool2">
-			<li class="bg" id="way">
-				<span class="iconfont" title="转换填充样式">&#xe644;</span>
-			</li>
-			<li class="bg bgp">
-				<span class="iconfont" title="修改填充色">&#xe649;</span>
-				<div class="polygon1 poly1">
-					<input type="color" id="fillCo">
-					<div class="trag"></div>
+				<div class="skill mdiv"><!-- 技能荣誉 -->
+					<div class="category">
+						<img src="img/jn-1.png" width="25px" height="25px" />
+						<span>&nbsp;技能荣誉</span>
+					</div>
+					<div class="description">
+						<span>
+							<p><b>证书：</b>大学英语四级，计算机C语言二级等</p>
+							<p><b>荣誉：</b>优秀班干部，优秀团支书，“数创杯”大学组优秀奖等</p>
+							<p><b>软件：</b>熟练使用Word，Excel，PPT办公软件，熟悉PS软件使用等</p>
+							<p><b>技能：</b>常用Sublime Text3，<a href="https://github.com/bencky1017">GitHub</a> Desktop等，本简历由网页编写完成</p>
+							<p><b>社区：</b><a href="https://blog.csdn.net/qq_42372031">CSDN</a>，<a href="https://www.cnblogs.com/bencky">博客园</a>等，其中CSDN中文章数篇浏览量过万</p>
+							<p><b>编程：</b></p>
+						</span>
+						<table>
+							<tr>
+								<tr>
+									<td>HTML：</td>
+									<td>
+										<div class="loading">
+											<span class="progress" style="width:77%;background-color: #0a0;"></span>
+										</div>
+									</td>
+									<td rowspan="4">
+										<img class="link" src="img/link.png" style="width:150px;height:150px;margin-left:30px"/>
+										
+									</td>
+								</tr>
+								<tr>
+									<td>Javascropt：</td>
+									<td>
+										<div class="loading">
+											<span class="progress" style="width:45%;background-color: #f22;"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>CSS：</td>
+									<td>
+										<div class="loading">
+											<span class="progress" style="width:60%;background-color: #fa0;"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>JQuery：</td>
+									<td>
+										<div class="loading">
+											<span class="progress" style="width:50%;background-color: #0af;"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>C语言：</td>
+									<td>
+										<div class="loading">
+											<span class="progress" style="width:70%;background-color: #a0f;"></span>
+										</div>
+									</td>
+									<td><p style="margin-left:30px">简历已上传Github</p></td>
+								</tr>
+							</tr>
+						</table>
+					</div>
 				</div>
-			</li>
-			<li class="bg bgp">
-				<span class="iconfont" title="线条加粗">&#xe604;</span>
-				<div class="polygon2">
-					<input type="range" min="1" max="30" value="1" id="linew">
-					<div class="trag trag1"></div>
-					<p id="numW">0</p>
+				<div class="ability mdiv"><!-- 能力性格 -->
+					<div class="category">
+						<img src="img/nl-1.png" width="25px" height="25px" />
+						<span>&nbsp;能力性格</span>
+					</div>
+					<div class="description">
+						<span>
+							<p><b>能力：</b>自学能力强，掌握速度快，善于思考，能沟通能静处</p>
+							<p><b>性格：</b>乐观，情绪稳定，去繁求简，不拐弯抹角</p>
+						</span>
+					</div>
 				</div>
-			</li>
-			<li class="bg" id="revo">
-				<span class="iconfont" title="撤销">&#xe699;</span>
-			</li>
-			<li class="bg" id="refresh">
-				<span class="iconfont" title="刷新画板">&#xe747;</span>
-			</li>
-			<li class="bg" id="save">
-				<span class="iconfont" title="保存">&#xe69d;</span>
-			</li>
-		</ul>
-	</div>
-	<div class="h_tittle">
-		<div class="h_tittle1">
-			<img src="img/palette_03.png" alt="" />
+				<div class="evaluate mdiv"><!-- 自我评价 -->
+					<div class="category">
+						<img src="img/pj-1.png" width="25px" height="25px" />
+						<span>&nbsp;自我评价</span>
+					</div>
+					<div class="description">
+						<span>
+							<p>◆乐观开朗，细心负责，有责任感；</p>
+							<p>◆擅于研究软件使用以及技能分享；</p>
+							<p>◆对待工作严谨认真，务实求真；</p>
+							<p>◆有较强的独立思考分析能力，善于沟通管理；</p>
+							<p>◆踏实刻苦，动手能力强，富有集体荣誉感。</p>
+						</span>
+					</div>
+				</div>
+				<div class="ending mdiv"><!-- 最后结束语 -->
+					<p>感谢您百忙之中垂阅本人简历！</p>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-
-<script src="js/index.js"></script>
-
-
 </body>
+<style type="text/css">
+	/*a{
+		text-decoration: none;
+		color: #336fac;
+	}
+	.main{
+		background-color: #fff;
+	}
+	.loading{
+		background-color: #eee;
+	}
+	.qrcode{
+		display: none;
+	}*/
+	/*打印删除*/
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	h3{
+		margin-top: 10px;
+	}
+	.qrcode{
+		position: relative;
+		left: 20px;
+		width: 40px;
+		height: 40px;
+		transform-origin: 0% 0%;
+		/*transform: scale(1);*/
+		transition: all 0.3s;
+	}
+	.qrcode:hover{
+		transform:scale(5);
+	}
+	.wrapper{
+		position: absolute;
+		margin-top: 0;
+		padding-top: 0;
+		width: 100%;
+		height: 1800px;/*
+		background-color: #757581;*/
+	}
+	.main{
+		margin-left: 5%;
+		margin-top: 100px;
+		width: 1140px;
+		height: 1600px;
+		border:2px solid #757575;
+		/*background-color: #eee;*/
+	}
+	.bk{
+		width:180px;
+		height:220px;
+		margin-left: 100px;
+		margin-top: 120px;
+		box-shadow: 5px 5px 10px #757575;
+	}
+	.name{
+		width: 600px;
+		margin-top: -210px;
+		margin-left: 360px;
+		line-height: 1.6em;
+		color: #336fac;
+	}
+	.career p{
+		font-size: 20px;
+		line-height: 32px;
+		font-weight: bold;
+		margin-top: 15px;
+	}
+	.basic img{
+		width: 30px;
+		height: 30px;
+	}
+	.basic{
+		font-size: 20px;
+		font-weight: bold /*相当于normal(400)=700*/
+	}
+	.table{
+		margin-top: 10px;
+		width: 600px;
+		height: 100px;
+	}
+	.mdiv{
+		margin-left: 120px;
+		margin-top: 60px;
+	}
+	.category{
+		color: #eee;
+		font-size: 22px;
+		text-align: center;
+		line-height: 2.4em;
+		width: 150px;
+		height: auto;
+		background-color: #336fac;
+	}
+	.description{
+		width: 620px;
+		height: auto;
+		font-size: 18px;
+		line-height: 28px;
+		margin-top: -60px;
+		margin-left: 240px;
+	}
+	.description span {
+		line-height: 30px;
+	}
+	.loading,.progress {
+		height: 10px;
+		font-size: 0;
+		line-height: 0;
+		border-radius: 6px;
+	}
+	.loading{
+		margin-top: 10px;
+		width: 300px;
+		overflow: hidden;
+		background-color: #eee;
+	}
+	.progress{
+		display: inline-block;
+	}
+	.ending{
+		margin-left: 360px;
+		width: 400px;
+		text-align: center;
+		font-size: 20px;
+		font-weight: 700;
+		color: rgba(0,0,0,0.3);
+	}
+</style>
 </html>
